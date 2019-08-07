@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <title>DS Academy - frontend</title>
+    </head>
+
+    <body>
+        <div class="frame">
+            <form class="feedback-form">
+                <p class="feedback-form__title">Задать вопрос</p>
+                <label>
+                    <input type="text" placeholder="Фамилия Имя Отчество *" class="feedback-form__input-name" pattern="[А-Яа-яЁё\s-]+">
+                </label>
+                <label>
+                    <input type="text" placeholder="Телефон *" class="feedback-form__input-phone" pattern="\+?[7-8]{1}(\s|-)?\d{3}(\s|-)?\d{3}(\s|-)?\d{2}(\s|-)?\d{2}">
+                </label>
+                <label>
+                    <input type="text" inputmode="email" placeholder="Email" class="feedback-form__input-email">
+                </label>
+                <input type="submit" value="Отправить запрос" class="feedback-form__button-send">
+            </form>
+        </div>
+    </body>
+</html>
