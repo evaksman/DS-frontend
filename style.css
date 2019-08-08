@@ -7,25 +7,43 @@
 
 .feedback-form {
     position: absolute;
-    left: 26.56%;
-    right: 26.46%;
-    top: 4.04%;
-    bottom: 44.92%;
+    width: 481px;
+    height: 392px;
+    left: 264px;
+    top: 23px;
+
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
 
     /* Color/Neutral/5 - Grey 10% */
-
     background: #F7F5F9;
     border-radius: 12px;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Robotobold.woff2') format('woff2'),
+        url('fonts/Robotobold.woff') format('woff'),
+        url('fonts/Robotobold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto.woff2') format('woff2'),
+        url('fonts/Roboto.woff') format('woff'),
+        url('fonts/Roboto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .feedback-form__title {
     position: absolute;
     width: 168px;
     height: 20px;
-    left: 312px;
-    top: 71px;
-    font-family: Roboto;
+    left: 40px;
+    top: 40px;
+    font-family: Roboto, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -40,30 +58,156 @@
     position: absolute;
     width: 401px;
     height: 48px;
-    left: 312px;
-    top: 116px;
+    left: 40px;
+    top: 82px;
+    text-indent: 13px;
+
+    /* Color/Neutral/6 - White */
+    background: #FFFFFF;
+    /* Dropshadow 1 */
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.feedback-form__input-name:focus {
+    border: 1px solid #854FC8;
 }
 
 .feedback-form__input-phone {
     position: absolute;
     width: 401px;
     height: 48px;
-    left: 312px;
-    top: 189px;
+    left: 40px;
+    top: 155px;
+    text-indent: 13px;
+
+    /* Color/Neutral/6 - White */
+    background: #FFFFFF;
+    /*border: 1px solid #854FC8;*/
+    /* Dropshadow 1 */
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.feedback-form__input-phone:focus {
+    border: 1px solid #854FC8;
 }
 
 .feedback-form__input-email {
     position: absolute;
     width: 401px;
     height: 48px;
-    left: 312px;
-    top: 262px;
+    left: 40px;
+    top: 228px;
+    text-indent: 13px;
+
+    /* Color/Neutral/6 - White*/
+    background: #FFFFFF;
+    /* Dropshadow 1*/
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.feedback-form__input-email:focus {
+    border: 1px solid #854FC8;
 }
 
 .feedback-form__button-send {
     position: absolute;
     width: 401px;
     height: 48px;
-    left: 312px;
-    top: 335px;
+    left: 40px;
+    top: 304px;
+    background: #6979F8;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+     /*identical to box height, or 129%*/
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+input::-webkit-input-placeholder {
+    position: absolute;
+    left: 15px;
+    right: 8.76%;
+    top: 29.17%;
+    bottom: 29.17%;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+    display: flex;
+    align-items: center;
+
+    color: #D0C9D6;
+}
+
+/* Firefox 19+ */
+input::-moz-placeholder {
+    position: absolute;
+    left: 15px;
+    right: 8.76%;
+    top: 29.17%;
+    bottom: 29.17%;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+    display: flex;
+    align-items: center;
+
+    color: #D0C9D6;
+}
+
+/* Firefox 18- */
+input:-moz-placeholder {
+    position: absolute;
+    left: 3.74%;
+    right: 8.76%;
+    top: 29.17%;
+    bottom: 29.17%;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+    display: flex;
+    align-items: center;
+
+    color: #D0C9D6;
+}
+input:-ms-input-placeholder {
+    position: absolute;
+    left: 3.74%;
+    right: 8.76%;
+    top: 29.17%;
+    bottom: 29.17%;
+
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+    display: flex;
+    align-items: center;
+
+    color: #D0C9D6;
 }
