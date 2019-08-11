@@ -19,41 +19,44 @@ CustomValidation.prototype = {
             || !input.value.match(/\+?[7-8]{1}(\s|-)?\d{3}(\s|-)?\d{3}(\s|-)?\d{2}(\s|-)?\d{2}/)
             || !input.value.match(/^[^@]+@[^@.]+\.[^@]+$/)))
             this.addInvalidity('Неверный формат поля');*/
-        console.log(document.querySelector('label[for="name"] li:nth-child(1)'));
-        if (input.value.length < 3) {
-            this.addInvalidity('Длина этого поля должна быть не менее трех символов');
-            var element = document.querySelector('label[for="name"] li:nth-child(1)');
-            element.classList.add('invalid');
-            element.classList.remove('valid');
-        } else {
-            var element = document.querySelector('label[for="name"] li:nth-child(1)');
-            element.classList.remove('invalid');
-            element.classList.add('valid');
-        }
-
-        if (input.value.length > 255) {
-            this.addInvalidity('Длина этого поля должна быть не более 255 символов');
-            var element = document.querySelector('label[for="name"] li:nth-child(2)');
-            element.classList.add('invalid');
-            element.classList.remove('valid');
-        } else {
-            var element = document.querySelector('label[for="name"] li:nth-child(2)');
-            element.classList.remove('invalid');
-            element.classList.add('valid');
-        }
-
-        if (input.value.match(/[^А-Яа-яЁё\s-]+/)) {
-            this.addInvalidity('В этом поле допустимы только русские буквы, пробелы и тире');
-            var element = document.querySelector('label[for="name"] li:last-child');
-            element.classList.add('invalid');
-            element.classList.remove('valid');
-        } else {
-            var element = document.querySelector('label[for="name"] li:last-child');
-            element.classList.remove('invalid');
-            element.classList.add('valid');
+        for (var i = 0; i < nameValidityChecks.length; i++) {
+            var isInvalid = nameValidityChecks[i].isInvalid(input);
+            if(isInvalid) {
+                this.addInvalidity(nameValidityChecks[i].invalidityMessage);
+                nameValidityChecks[i].element.classList.add('invalid');
+                nameValidityChecks[i].element.classList.remove('valid');
+            } else {
+                nameValidityChecks[i].element.classList.remove('invalid');
+                nameValidityChecks[i].element.classList.add('valid');
+            }
         }
     }
 };
+
+var nameValidityChecks = [
+    {
+       isInvalid: function(input) {
+           return input.value.length < 3;
+        },
+        invalidityMessage: 'Длина этого поля должна быть не менее трех символов',
+        element: document.querySelector('label[for="name"] li:nth-child(1)')
+    },
+    {
+        isInvalid: function(input) {
+            return input.value.length > 255;
+        },
+        invalidityMessage: 'Длина этого поля должна быть не более 255 символов',
+        element: document.querySelector('label[for="name"] li:nth-child(2)')
+    },
+    {
+        isInvalid: function(input) {
+            var legalCharacters = input.value.match(/[^А-Яа-яЁё\s-]+/);
+            return !!legalCharacters;
+        },
+        invalidityMessage: 'В этом поле допустимы только русские буквы, пробелы и тире',
+        element: document.querySelector('label[for="name"] li:last-child')
+    },
+];
 
 var nameInput = document.getElementById('name');
 nameInput.CustomValidation = new CustomValidation();
