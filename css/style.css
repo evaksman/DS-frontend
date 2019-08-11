@@ -10,7 +10,7 @@
     width: 481px;
     left: 264px;
     top: 23px;
-    min-height: 392px;
+    min-height: 390px;
     max-height: 555px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
 
@@ -226,6 +226,22 @@ input:-ms-input-placeholder {
     align-items: center;
 
     color: #D0C9D6;
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+:focus::-moz-placeholder {
+    color: transparent;
+}
+
+:focus:-moz-placeholder {
+    color: transparent;
+}
+
+:focus:-ms-input-placeholder {
+    color: transparent;
 }
 
 .input-requirements {
