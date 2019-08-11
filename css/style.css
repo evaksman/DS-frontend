@@ -10,12 +10,12 @@
     width: 481px;
     left: 264px;
     top: 23px;
+    height: auto;
     min-height: 390px;
     max-height: 555px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-
-    /* Color/Neutral/5 - Grey 10% */
     background: #F7F5F9;
+    -webkit-border-radius: 12px;
     border-radius: 12px;
 }
 
@@ -48,7 +48,6 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 20px;
-    /* identical to box height, or 83% */
     display: flex;
     align-items: center;
     color: #3B3D43;
@@ -71,14 +70,13 @@ ul {
     width: 401px;
     height: 48px;
     left: 40px;
-    top: 80px; /*был 82*/
-    text-indent: 13px;
-
-    /* Color/Neutral/6 - White */
+    top: 82px; /*был 82*/
+    text-indent: 15px;
     background: #FFFFFF;
-    /* Dropshadow 1 */
     box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    -webkit-border-radius: 6px;
     border-radius: 6px;
+    border-style: hidden;
 }
 
 .feedback-form__input-phone {
@@ -86,15 +84,13 @@ ul {
     width: 401px;
     height: 48px;
     left: 40px;
-    top: 143px; /*был 155*/
-    text-indent: 13px;
-
-    /* Color/Neutral/6 - White */
+    top: 145px; /*был 155*/
+    text-indent: 15px;
     background: #FFFFFF;
-    /*border: 1px solid #854FC8;*/
-    /* Dropshadow 1 */
     box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    -webkit-border-radius: 6px;
     border-radius: 6px;
+    border-style: hidden;
 }
 
 .phone {
@@ -110,14 +106,13 @@ ul {
     width: 401px;
     height: 48px;
     left: 40px;
-    top: 142px; /*228*/
-    text-indent: 13px;
-
-    /* Color/Neutral/6 - White*/
+    top: 148px; /*228*/
+    text-indent: 15px;
     background: #FFFFFF;
-    /* Dropshadow 1*/
     box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    -webkit-border-radius: 6px;
     border-radius: 6px;
+    border-style: hidden;
 }
 
 .email {
@@ -133,22 +128,20 @@ ul {
     width: 401px;
     height: 48px;
     left: 40px;
-    top: 144px; /*304*/
+    top: 152px; /*304*/
     background: #6979F8;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
     line-height: 22px;
-     /*identical to box height, or 129%*/
     display: inline-block;
     align-items: center;
     text-align: center;
-
     color: #FFFFFF;
+    border-style: hidden;
 }
 
 input::-webkit-input-placeholder {
@@ -157,16 +150,13 @@ input::-webkit-input-placeholder {
     right: 8.76%;
     top: 29.17%;
     bottom: 29.17%;
-
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-    /* identical to box height, or 133% */
     display: flex;
     align-items: center;
-
     color: #D0C9D6;
 }
 
@@ -177,16 +167,13 @@ input::-moz-placeholder {
     right: 8.76%;
     top: 29.17%;
     bottom: 29.17%;
-
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-    /* identical to box height, or 133% */
     display: flex;
     align-items: center;
-
     color: #D0C9D6;
 }
 
@@ -197,16 +184,13 @@ input:-moz-placeholder {
     right: 8.76%;
     top: 29.17%;
     bottom: 29.17%;
-
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-    /* identical to box height, or 133% */
     display: flex;
     align-items: center;
-
     color: #D0C9D6;
 }
 input:-ms-input-placeholder {
@@ -215,13 +199,11 @@ input:-ms-input-placeholder {
     right: 8.76%;
     top: 29.17%;
     bottom: 29.17%;
-
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 20px;
-    /* identical to box height, or 133% */
     display: flex;
     align-items: center;
 
@@ -268,7 +250,24 @@ input:-ms-input-placeholder {
 }
 
 input:not([type="submit"]):focus {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    outline: none;
     border: 1px solid #854FC8;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #6e8ef8;
+}
+
+input[type="submit"]:focus {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #854FC8;
+    cursor: pointer;
+    background-color: #6e8ef8;
 }
 
 /*input:not([type="submit"]):invalid{
