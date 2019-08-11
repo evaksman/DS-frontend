@@ -28,6 +28,7 @@ CustomValidation.prototype = {
     }
 };
 
+/* массивы с данными о валидности для каждого инпута */
 var nameValidityChecks = [
     {
        isInvalid: function(input) {
@@ -103,7 +104,7 @@ var emailValidityChecks = [
     }
 ];
 
-
+/* проверяем инпут и устанавливаем свои сообщения об ошибках */
 function checkInput(input) {
     input.CustomValidation.invalidities.splice(0, input.CustomValidation.invalidities.length)
     input.CustomValidation.checkValidity(input);
@@ -115,8 +116,8 @@ function checkInput(input) {
     }
 }
 
-
-
+/* инициализируем свой прототип для каждого инпута и
+    устанавливаем, какой массив нужно для него использовать */
 var nameInput = document.getElementById('name');
 var phoneInput = document.getElementById('phone');
 var emailInput = document.getElementById('email');
@@ -130,6 +131,7 @@ phoneInput.CustomValidation.validityChecks = phoneValidityChecks;
 emailInput.CustomValidation = new CustomValidation();
 emailInput.CustomValidation.validityChecks = emailValidityChecks;
 
+/* отслеживаем события keyup в инпутах и click по кнопке */
 var inputs = document.querySelectorAll('input:not([type="submit"])');
 for (var i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('keyup', function() {
