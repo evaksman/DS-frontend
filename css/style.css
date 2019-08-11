@@ -1,7 +1,7 @@
 .frame {
     position: relative;
     width: 1024px;
-    min-height: 768px;
+    height: 768px;
     background: #FFFFFF;
 }
 
