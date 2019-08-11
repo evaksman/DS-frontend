@@ -255,7 +255,7 @@ input:not([type="submit"]):focus {
     border: 1px solid #854FC8;
 }
 
-/*input:not([type="submit"]):invalid {
+/*input:not([type="submit"]):invalid{
     border-color: #e74c3c;
 }
 
