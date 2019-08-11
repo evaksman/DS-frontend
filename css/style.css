@@ -1,7 +1,7 @@
 .frame {
     position: relative;
     width: 1024px;
-    height: 768px;
+    min-height: 768px;
     background: #FFFFFF;
 }
 
@@ -11,8 +11,9 @@
     left: 264px;
     top: 23px;
     height: auto;
+    /*overflow: auto;
     min-height: 390px;
-    max-height: 555px;
+    max-height: 555px;*/
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     background: #F7F5F9;
     -webkit-border-radius: 12px;
@@ -35,6 +36,11 @@
         url('../fonts/Roboto.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../fonts/SF-Font-Pro.dmg');
 }
 
 /* заголовок */
@@ -71,6 +77,9 @@ ul {
     -webkit-border-radius: 6px;
     border-radius: 6px;
     border-style: hidden;
+    font-family: SF Pro Text, serif;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 /* требования к ФИО */
@@ -152,6 +161,12 @@ ul {
     border-style: hidden;
 }
 
+/* для "резиновой" высоты формы,
+ потому что height: auto у формы работает не так как хочется */
+.feedback-form__filler {
+    height: 192px;
+}
+
 /* плейсхолдеры инпутов */
 input::-webkit-input-placeholder {
     position: absolute;
@@ -224,7 +239,7 @@ input:-ms-input-placeholder {
 :focus:-ms-input-placeholder { color: transparent; }
 
 /* список требований к инпутам*/
-.input-requirements {
+.feedback-form__input-requirements {
     font-style: italic;
     text-align: left;
     list-style: disc inside;
@@ -234,17 +249,17 @@ input:-ms-input-placeholder {
 }
 
 /* для невалидного элемента из списка требований */
-.input-requirements li.invalid {
+.feedback-form__input-requirements li.invalid {
     color: #e74c3c;
 }
 
 /* для валидного элемента из списка требований */
-.input-requirements li.valid {
+.feedback-form__input-requirements li.valid {
     color: #2ecc71;
 }
 
 /* для отображения галочки рядом с валидными элементами */
-.input-requirements li.valid:after {
+.feedback-form__input-requirements li.valid:after {
     display: inline-block;
     padding-left: 10px;
     content: "\2713";
@@ -275,17 +290,18 @@ input[type="submit"]:focus {
 }
 
 /* анимация требований при взаимодействии с инпутами*/
-input:not([type="submit"]) + .input-requirements {
+input:not([type="submit"]) + .feedback-form__input-requirements {
     overflow: hidden;
     max-height: 0;
     transition: max-height 1s ease-out;
 }
 
-input:not([type="submit"]):hover + .input-requirements,
-input:not([type="submit"]):focus + .input-requirements,
-input:not([type="submit"]):active + .input-requirements {
-    max-height: 1000px;
-    transition: max-height 1s ease-out;
+input:not([type="submit"]):hover + .feedback-form__input-requirements,
+input:not([type="submit"]):focus + .feedback-form__input-requirements,
+input:not([type="submit"]):active + .feedback-form__input-requirements {
+     max-height: 1000px;
+     transition: max-height 1s ease-out;
 }
+
 
 

@@ -6,15 +6,13 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" >
         <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
     </head>
-
     <body>
         <div class="frame">
-            <div class=".container">
             <form class="feedback-form">
                 <div class="feedback-form__title">Задать вопрос</div>
                 <label for="name">
-                    <input id="name" name="name" type="text" placeholder="Фамилия Имя Отчество *" class="feedback-form__input-name" required minlength="3" maxlength="255">
-                    <ul class="input-requirements name">
+                    <input class="feedback-form__input-name" id="name" name="name" type="text" placeholder="Фамилия Имя Отчество *" required minlength="3" maxlength="255">
+                    <ul class="feedback-form__input-requirements name">
                         <li>Минимальное количество символов: 3</li>
                         <li>Максимальное количество символов: 255</li>
                         <li>Можно использовать только русские буквы, пробелы и тире</li>
@@ -22,7 +20,7 @@
                 </label>
                 <label for="phone">
                     <input id="phone" name="phone" type="text" placeholder="Телефон *" class="feedback-form__input-phone" required minlength="11" maxlength="16">
-                    <ul class="input-requirements phone">
+                    <ul class="feedback-form__input-requirements phone">
                         <li>Минимальное количество символов: 11</li>
                         <li>Максимальное количество символов: 16</li>
                         <li>Только цифры, пробелы, - и +</li> <!--Форматы: +79123456789, 89123456789, 8-912-345-67-89, 8 912 345 67 89, +7 912 345 67 89, 8 912 345-67-89, +7 912 345-67-89 -->
@@ -30,15 +28,15 @@
                 </label>
                 <label for="email">
                     <input id="email" name="email" type="email" placeholder="Email" class="feedback-form__input-email" minlength="3" maxlength="129">
-                    <ul class="input-requirements email">
+                    <ul class="feedback-form__input-requirements email">
                         <li>Минимальное количество символов: 3</li>
                         <li>Максимальное количество символов: 129</li>
                         <li>Валидный формат: *@*.*</li>
                     </ul>
                 </label>
                 <input type="submit" value="ОТПРАВИТЬ ЗАПРОС" class="feedback-form__button-send">
+                <div class="feedback-form__filler"></div>
             </form>
-            </div>
         </div>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
